@@ -5,6 +5,7 @@ import {
 	createUserWithEmailAndPassword,
 	updateProfile,
 } from "firebase/auth";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
@@ -50,6 +51,16 @@ function SignUp() {
 			updateProfile(auth.currentUser, {
 				displayName: name,
 			});
+
+			// Creating a copy of formData (the name, email and password) because we don't want to overwrite it's contents
+			const formDataCopy = { ...formData };
+			// Deleting the password because we don't want that submitted to the database
+			delete formDataCopy.password;
+			// Set the timestamp to the serverTimestamp at that time
+			formDataCopy.timestamp = serverTimestamp();
+
+			// Updating the databse and adding the user's data to the user's collection
+			await setDoc(doc(db, "users", user.uid), formDataCopy);
 
 			// Redirecting
 			navigate("/");
