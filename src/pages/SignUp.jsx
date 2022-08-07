@@ -66,6 +66,7 @@ function SignUp() {
 			// Redirecting
 			navigate("/");
 		} catch (error) {
+			// We are using the default toastify settings but we can manually alter them if we want to
 			toast.error("Something went wrong with registration");
 		}
 	};
