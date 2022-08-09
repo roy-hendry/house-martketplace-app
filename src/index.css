@@ -13,18 +13,18 @@ body {
     margin: 0;
     box-sizing: border-box;
   }
-  
+
   a {
     text-decoration: none;
     display: block;
     color: #000000;
   }
-  
+
   button {
     outline: none;
     border: none;
   }
-  
+
   .input,
   .passwordInput,
   .emailInput,
@@ -41,9 +41,9 @@ body {
     padding: 0 3rem;
     font-size: 1rem;
   }
-  
+
   @media (min-width: 1100px) {
-  
+
     .input,
     .passwordInput,
     .emailInput,
@@ -52,13 +52,13 @@ body {
       padding: 0 5rem;
     }
   }
-  
+
   .textarea {
     padding: 1rem 1.5rem;
     height: 300px;
     border-radius: 1rem;
   }
-  
+
   .primaryButton {
     cursor: pointer;
     background: #00cc66;
@@ -73,21 +73,21 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
+
   .removeIcon {
     cursor: pointer;
     position: absolute;
     top: -3%;
     right: -2%;
   }
-  
+
   .editIcon {
     cursor: pointer;
     position: absolute;
     top: -3.4%;
     right: 20px;
   }
-  
+
   .pageContainer,
   .offers,
   .profile,
@@ -96,9 +96,9 @@ body {
   .explore {
     margin: 1rem;
   }
-  
+
   @media (min-width: 1024px) {
-  
+
     .pageContainer,
     .offers,
     .profile,
@@ -108,7 +108,7 @@ body {
       margin: 3rem;
     }
   }
-  
+
   .loadingSpinnerContainer {
     position: fixed;
     top: 0;
@@ -121,7 +121,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .loadingSpinner {
     width: 64px;
     height: 64px;
@@ -130,22 +130,22 @@ body {
     border-radius: 50%;
     animation: spin 1.2s linear infinite;
   }
-  
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
     }
-  
+
     100% {
       transform: rotate(360deg);
     }
   }
-  
+
   .pageHeader {
     font-size: 2rem;
     font-weight: 800;
   }
-  
+
   .navbar {
     position: fixed;
     left: 0;
@@ -158,13 +158,13 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .navbarNav {
     width: 100%;
     margin-top: 0.75rem;
     overflow-y: hidden;
   }
-  
+
   .navbarListItems {
     margin: 0;
     padding: 0;
@@ -172,14 +172,14 @@ body {
     justify-content: space-evenly;
     align-items: center;
   }
-  
+
   .navbarListItem {
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .navbarListItemName,
   .navbarListItemNameActive {
     margin-top: 0.25rem;
@@ -187,30 +187,30 @@ body {
     font-weight: 600;
     color: #8f8f8f;
   }
-  
+
   .navbarListItemNameActive {
     color: #2c2c2c;
   }
-  
+
   .nameInput {
     margin-bottom: 2rem;
     background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
   }
-  
+
   .emailInput {
     margin-bottom: 2rem;
     background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
   }
-  
+
   .passwordInputDiv {
     position: relative;
   }
-  
+
   .passwordInput {
     margin-bottom: 2rem;
     background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
   }
-  
+
   .showPassword {
     cursor: pointer;
     position: absolute;
@@ -218,14 +218,14 @@ body {
     right: 1%;
     padding: 1rem;
   }
-  
+
   .forgotPasswordLink {
     cursor: pointer;
     color: #00cc66;
     font-weight: 600;
     text-align: right;
   }
-  
+
   .signInBar,
   .signUpBar {
     margin-top: 3rem;
@@ -234,28 +234,28 @@ body {
     align-items: center;
     position: inherit;
   }
-  
+
   .signInButton,
   .signUpButton,
   .signInText,
   .signUpText {
     cursor: pointer;
   }
-  
+
   @media (min-width: 1024px) {
-  
+
     .signInBar,
     .signUpBar {
       justify-content: start;
     }
   }
-  
+
   .signInText,
   .signUpText {
     font-size: 1.5rem;
     font-weight: 700;
   }
-  
+
   .signInButton,
   .signUpButton {
     display: flex;
@@ -266,22 +266,22 @@ body {
     background-color: #00cc66;
     border-radius: 50%;
   }
-  
+
   @media (min-width: 1024px) {
-  
+
     .signInButton,
     .signUpButton {
       margin-left: 3rem;
     }
   }
-  
+
   .socialLogin {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .socialIconDiv {
     cursor: pointer;
     display: flex;
@@ -295,11 +295,11 @@ body {
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   }
-  
+
   .socialIconImg {
     width: 100%;
   }
-  
+
   .registerLink {
     margin-top: 4rem;
     color: #00cc66;
@@ -307,48 +307,48 @@ body {
     text-align: center;
     margin-bottom: 3rem;
   }
-  
+
   @media (min-width: 1217px) {
     .explore {
       margin-bottom: 10rem;
     }
   }
-  
+
   @media (max-height: 536) {
     .explore {
       margin-bottom: 10rem;
     }
   }
-  
+
   .exploreHeading,
   .exploreCategoryHeading {
     font-weight: 700;
   }
-  
+
   .exploreCategoryHeading {
     margin-top: 3rem;
   }
-  
+
   .swiper-container {
     min-height: 225px;
     height: 23vw;
   }
-  
+
   .swiper-pagination-bullet-active {
     background-color: #ffffff !important;
   }
-  
+
   .swiperSlideDiv {
     position: relative;
     width: 100%;
     height: 100%;
   }
-  
+
   .swiperSlideImg {
     width: 100%;
     object-fit: cover;
   }
-  
+
   .swiperSlideText {
     color: #ffffff;
     position: absolute;
@@ -360,13 +360,13 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
   }
-  
+
   @media (min-width: 1024px) {
     .swiperSlideText {
       font-size: 1.75rem;
     }
   }
-  
+
   .swiperSlidePrice {
     color: #000000;
     position: absolute;
@@ -378,22 +378,22 @@ body {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
   }
-  
+
   @media (min-width: 1024px) {
     .swiperSlidePrice {
       font-size: 1.25rem;
     }
   }
-  
+
   .exploreCategories {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .exploreCategories a {
     width: 48%;
   }
-  
+
   .exploreCategoryImg {
     min-height: 115px;
     height: 15vw;
@@ -402,20 +402,20 @@ body {
     object-fit: cover;
     margin: 0 auto;
   }
-  
+
   .exploreCategoryName {
     font-weight: 500;
     text-align: left;
   }
-  
+
   .category {
     margin-bottom: 10rem;
   }
-  
+
   .categoryListings {
     padding: 0;
   }
-  
+
   .categoryListing {
     display: flex;
     justify-content: space-between;
@@ -423,42 +423,42 @@ body {
     margin-bottom: 1rem;
     position: relative;
   }
-  
+
   .categoryListingLink {
     display: contents;
   }
-  
+
   .categoryListingImg {
     width: 30%;
     height: 100px;
     border-radius: 1.5rem;
     object-fit: cover;
   }
-  
+
   @media (min-width: 1024px) {
     .categoryListingImg {
       width: 19%;
       height: 217px;
     }
   }
-  
+
   .categoryListingDetails {
     width: 65%;
   }
-  
+
   @media (min-width: 1024px) {
     .categoryListingDetails {
       width: 79%;
     }
   }
-  
+
   .categoryListingLocation {
     font-weight: 600;
     font-size: 0.7rem;
     opacity: 0.8;
     margin-bottom: 0;
   }
-  
+
   .categoryListingName {
     font-weight: 600;
     font-size: 1.25rem;
@@ -687,8 +687,11 @@ body {
 .profileNameActive {
   all: unset;
   margin: 0.3rem 0;
+  border-radius: 0.3rem;
   font-weight: 600;
+  text-indent: 0.5rem;
   width: 100%;
+  block-size: 1.5rem;
 }
 
 .profileNameActive {

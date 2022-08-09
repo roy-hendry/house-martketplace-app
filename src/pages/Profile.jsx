@@ -83,6 +83,8 @@ function Profile() {
 							value={name}
 							onChange={onChange}
 						/>
+					</form>
+					<form>
 						<input
 							className="profileEmail"
 							type="text"
