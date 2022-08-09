@@ -146,6 +146,12 @@ body {
     font-weight: 800;
   }
 
+  .pageTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    text-indent: 2rem;
+  }
+
   .navbar {
     position: fixed;
     left: 0;

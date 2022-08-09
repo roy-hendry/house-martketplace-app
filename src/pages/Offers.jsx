@@ -1,7 +1,7 @@
 function Offers() {
 	return (
 		<>
-			<h1>Offers</h1>
+			<h1 className="pageTitle">Offers</h1>
 		</>
 	);
 }
