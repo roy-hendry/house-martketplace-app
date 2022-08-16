@@ -44,6 +44,7 @@ function Profile() {
 	};
 
 	const onChange = (e) => {
+		// We use the normal brackets outside the curly brackets as we are returning an object
 		setFormData((prevState) => ({
 			...prevState,
 			[e.target.id]: e.target.value,

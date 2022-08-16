@@ -790,9 +790,10 @@ body {
 
 .formInputSmall,
 .formInputFile {
-  margin-right: 3rem;
+  margin-right: 1rem;
   padding: 0.9rem 0.7rem;
   text-align: center;
+  width: 7rem;
 }
 
 .formInputName {
@@ -813,7 +814,7 @@ body {
 }
 
 .formPriceText {
-  margin-left: -1.5rem;
+  margin-left: 0.8rem;
   font-weight: 600;
 }
 
