@@ -22,6 +22,7 @@ function CreateListing() {
 		longitude: 0,
 	});
 
+	// We deconstructed formData so we don't need to type 'formData.bedrooms' instead we can type 'bedrooms'
 	const {
 		type,
 		name,
@@ -63,6 +64,8 @@ function CreateListing() {
 		console.log(formData);
 	};
 
+	// We use onMutate as a onChange type of method
+	// e.target.value needs to be checked against the String form of true as it isn't stored as a boolean value, we convert it after
 	const onMutate = (e) => {
 		let boolean = null;
 
@@ -152,6 +155,7 @@ function CreateListing() {
 							<label className="formLabel">Bedrooms</label>
 							<input
 								className="formInputSmall"
+								// Due to type being number this changes the box so that it has 2 arrows, at the side to increment or decrement the value
 								type="number"
 								id="bedrooms"
 								value={bedrooms}
@@ -250,6 +254,7 @@ function CreateListing() {
 						onChange={onMutate}
 						required
 					/>
+					{/* Provided geolocationEnabled is false there will be a latitude and longitude box for  users to enter */}
 					{!geolocationEnabled && (
 						<div className="formLatLng flex">
 							<div>
