@@ -6,6 +6,7 @@ import {
 	uploadBytesResumable,
 	getDownloadURL,
 } from "firebase/storage";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -169,9 +170,26 @@ function CreateListing() {
 			return;
 		});
 
-		console.log(imgUrls);
+		// Taking fields we want from formData then adding some extras we already have set up the way we want
+		const formDataCopy = {
+			...formData,
+			imgUrls,
+			geolocation,
+			timestamp: serverTimestamp(),
+		};
+
+		// Removing fields we don't want from formData
+		delete formDataCopy.images;
+		delete formDataCopy.address;
+		location && (formDataCopy.location = location);
+		!formDataCopy.offer && delete formDataCopy.discountedPrice;
+
+		// Saving to the database
+		const docRef = await addDoc(collection(db, "listings"), formDataCopy);
 
 		setLoading(false);
+		toast.success("Listing saved");
+		navigate(`/category/${formDataCopy.type}/${docRef.id}`);
 	};
 
 	// We use onMutate as a onChange type of method
@@ -291,38 +309,6 @@ function CreateListing() {
 						</div>
 					</div>
 
-					<label className="formLabel">Parking spot</label>
-					<div className="formButtons">
-						<button
-							className={
-								parking ? "formButtonActive" : "formButton"
-							}
-							type="button"
-							id="parking"
-							value={true}
-							onClick={onMutate}
-							min="1"
-							max="50"
-						>
-							Yes
-						</button>
-						<button
-							className={
-								!parking && parking !== null
-									? "formButtonActive"
-									: "formButton"
-							}
-							type="button"
-							id="parking"
-							value={false}
-							onClick={onMutate}
-							min="1"
-							max="50"
-						>
-							No
-						</button>
-					</div>
-
 					<label className="formLabel">Furnished</label>
 					<div className="formButtons">
 						<button
@@ -346,6 +332,38 @@ function CreateListing() {
 							}
 							type="button"
 							id="furnished"
+							value={false}
+							onClick={onMutate}
+							min="1"
+							max="50"
+						>
+							No
+						</button>
+					</div>
+
+					<label className="formLabel">Parking spot</label>
+					<div className="formButtons">
+						<button
+							className={
+								parking ? "formButtonActive" : "formButton"
+							}
+							type="button"
+							id="parking"
+							value={true}
+							onClick={onMutate}
+							min="1"
+							max="50"
+						>
+							Yes
+						</button>
+						<button
+							className={
+								!parking && parking !== null
+									? "formButtonActive"
+									: "formButton"
+							}
+							type="button"
+							id="parking"
 							value={false}
 							onClick={onMutate}
 							min="1"
