@@ -95,7 +95,7 @@ function Listing() {
 				{/* If this isn't the user's own listing then allow the user to contact the Landlord */}
 				{auth.currentUser?.uid !== listing.userRef && (
 					<Link
-						to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`}
+						to={`/contact/${listing.userRef}?listingName=${listing.name}`}
 						className="primaryButton"
 					>
 						Contact Landlord
