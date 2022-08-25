@@ -93,6 +93,7 @@ function Listing() {
 				<p className="listingLocationTitle">Location</p>
 
 				<div className="leafletContainer">
+					{/* The map is centered on the location of the property */}
 					<MapContainer
 						style={{ height: "100%", width: "100%" }}
 						center={[
@@ -108,12 +109,14 @@ function Listing() {
 							url="https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
 						/>
 
+						{/* Position of the marker */}
 						<Marker
 							position={[
 								listing.geolocation.lat,
 								listing.geolocation.lng,
 							]}
 						>
+							{/* The pop up text that comes up when you click the marker */}
 							<Popup>{listing.location}</Popup>
 						</Marker>
 					</MapContainer>
