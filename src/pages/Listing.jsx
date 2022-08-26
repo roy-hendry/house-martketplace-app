@@ -45,6 +45,7 @@ function Listing() {
 				onClick={() => {
 					navigator.clipboard.writeText(window.location.href);
 					setShareLinkCopied(true);
+					// After some time has passed you can copy the link again
 					setTimeout(() => {
 						setShareLinkCopied(false);
 					}, 2000);
@@ -69,6 +70,7 @@ function Listing() {
 				<p className="listingType">
 					For {listing.type === "rent" ? "Rent" : "Sale"}
 				</p>
+				{/* Shows how much the property has been discounted */}
 				{listing.offer && (
 					<p className="discountPrice">
 						${listing.regularPrice - listing.discountedPrice}{" "}
