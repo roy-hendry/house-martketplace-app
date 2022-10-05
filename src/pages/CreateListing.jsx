@@ -114,6 +114,7 @@ function CreateListing() {
 		} else {
 			geolocation.lat = latitude;
 			geolocation.lng = longitude;
+			location = address;
 		}
 
 		// Store image in firebase
@@ -143,6 +144,7 @@ function CreateListing() {
 								console.log("Upload is running");
 								break;
 							default:
+								break;
 						}
 					},
 					(error) => {
