@@ -92,6 +92,7 @@ function Profile() {
 		}));
 	};
 
+	// The onDelete method has to not only remove the contents from firebase but from the actual listings shown at the time too so we filter through the listings locally and remove the one we removed from firebase too
 	const onDelete = async (listingId) => {
 		if (window.confirm("Are you sure you want to delete?")) {
 			await deleteDoc(doc(db, "listings", listingId));

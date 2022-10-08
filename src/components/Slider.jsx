@@ -8,12 +8,15 @@ import "swiper/css";
 import Spinner from "./Spinner";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
+// The set up of this component will be very useful for future projects so refer back to it if need be
+
 function Slider() {
 	const [loading, setLoading] = useState(true);
 	const [listings, setListings] = useState(null);
 
 	const navigate = useNavigate();
 
+	// We only want the first 5 listings and they get pushed onto the listings array individually as we can't really map through like we did for the other examples of taking data from firebase
 	useEffect(() => {
 		const fetchListings = async () => {
 			const listingsRef = collection(db, "listings");
