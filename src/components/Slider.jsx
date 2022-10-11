@@ -47,6 +47,11 @@ function Slider() {
 		return <Spinner />;
 	}
 
+	// This stops us from having a big empty space if there is no listing shown
+	if (listings.length === 0) {
+		return <></>;
+	}
+
 	return (
 		listings && (
 			<>
