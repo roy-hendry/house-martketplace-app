@@ -4,6 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/pagination";
 import { getDoc, doc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { db } from "../firebase.config";
@@ -40,7 +41,11 @@ function Listing() {
 
 	return (
 		<main>
-			<Swiper spaceBetween={50} slidesPerView={1}>
+			<Swiper
+				spaceBetween={50}
+				slidesPerView={1}
+				pagination={{ clickable: true }}
+			>
 				{/* Depending on the number of images in the array for the imgUrls there will be the amount of props rendered accordingly. This way there will only be slides for each of the pictures the creator of this post has selected*/}
 				{listing.imgUrls.map((imageUrl, index) => (
 					<SwiperSlide key={index}>

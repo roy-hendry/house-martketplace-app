@@ -5,6 +5,7 @@ import { db } from "../firebase.config";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/pagination";
 import Spinner from "./Spinner";
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -57,7 +58,11 @@ function Slider() {
 			<>
 				<p className="exploreHeading">Recommended</p>
 
-				<Swiper spaceBetween={50} slidesPerView={1}>
+				<Swiper
+					spaceBetween={50}
+					slidesPerView={1}
+					pagination={{ clickable: true }}
+				>
 					{listings.map(({ data, id }) => (
 						<SwiperSlide
 							key={id}
