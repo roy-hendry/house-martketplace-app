@@ -153,6 +153,11 @@ function Listing() {
 					</Link>
 				)}
 			</div>
+			{/* Page breaks are here so that the navbar doesn't cover up the text on the words */}
+			<br />
+			<br />
+			<br />
+			<br />
 		</main>
 	);
 }
